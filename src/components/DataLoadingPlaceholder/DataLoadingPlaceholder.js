@@ -3,7 +3,7 @@ import './DataLoadingPlaceholder.scss'
 
 function DataLoadingPlaceholder() {
   return (
-    <div className="spinner--wrapper">
+    <div className="spinner--wrapper" title="placeholder">
       <div className="spinner">
         <div/>
         <div/>

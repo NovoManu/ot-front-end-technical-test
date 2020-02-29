@@ -28,9 +28,9 @@ function DataTableRow({ gene, chartType }) {
   }
 
   return (
-    <React.Fragment>
+    <>
       <tr className="table__row">
-        <td className="table__col" onClick={showChart}>
+        <td className="table__col" onClick={showChart} title="chartSwitcher">
           <div className={chartShowed ? 'minus' : 'plus'} />
         </td>
         <td className="table__col">{symbol}</td>
@@ -45,8 +45,7 @@ function DataTableRow({ gene, chartType }) {
           </td>
         </tr>
       }
-
-    </React.Fragment>
+    </>
   )
 }
 

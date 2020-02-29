@@ -1,9 +1,10 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import React from 'react'
+import { render, waitForElement } from '@testing-library/react'
+import App from './App'
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+test('start app correctly', async () => {
+  const { getByTitle, getByText } = render(<App />)
+  expect(getByTitle('placeholder')).toBeInTheDocument()
+  const table = await waitForElement(() => getByText('Genes Associated with lung carcinoma'))
+  expect(table).toBeInTheDocument()
+})
