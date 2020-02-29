@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import "./App.css"
-import { Http } from './http/Http'
+import { Http } from './utils/http/Http'
+import { DataTable, DataLoadingPlaceholder } from './components'
 
 const http = new Http()
 
@@ -16,11 +17,13 @@ function App() {
     fetchData()
   }, [])
 
+  const content = data
+    ? <DataTable data={data} />
+    : <DataLoadingPlaceholder />
+
   return (
     <div className="App">
-      <p>
-        Feel free to edit <code>src/App.js</code> and save to reload.
-      </p>
+      {content}
     </div>
   );
 }
