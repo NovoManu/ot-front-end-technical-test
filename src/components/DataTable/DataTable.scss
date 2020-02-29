@@ -1,0 +1,62 @@
+$colorBorder: rgba(0, 0, 0, 0.12);
+$colorIcon: rgb(121, 182, 242);
+
+.table {
+  width: 100%;
+  max-width: 1200px;
+  border-spacing: 0;
+  border: thin solid $colorBorder;
+  &__header {
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+  }
+  &__row {
+    box-sizing: border-box;
+  }
+  &__col {
+    padding: 0.8rem 1.2rem;
+    border: thin solid $colorBorder;
+  }
+}
+.plus, .minus {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    background: $colorIcon;
+    border-radius: 2px;
+    transition: all .3s ease-in-out;
+  }
+  &::before {
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 100%;
+  }
+  &::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 2px;
+  }
+  &:hover {
+    opacity: .7;
+  }
+}
+.minus{
+  &::after {
+    opacity: 0;
+  }
+  &::before {
+    top: 0;
+    transform: rotate(90deg);
+  }
+}
