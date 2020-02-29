@@ -1,8 +1,20 @@
 import React from 'react'
+import './DataLoadingPlaceholder.scss'
 
 function DataLoadingPlaceholder() {
   return (
-    <div> Loading... </div>
+    <div className="spinner--wrapper">
+      <div className="spinner">
+        <div/>
+        <div/>
+        <div/>
+        <div/>
+        <div/>
+        <div/>
+        <div/>
+        <div/>
+      </div>
+    </div>
   )
 }
 

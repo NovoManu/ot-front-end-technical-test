@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import "./App.css"
+import "./App.scss"
 import { Http } from './utils/http/Http'
 import { DataTable, DataLoadingPlaceholder } from './components'
 
@@ -17,7 +17,7 @@ function App() {
     fetchData()
   }, [])
 
-  const content = data
+  const content = !data
     ? <DataTable data={data} />
     : <DataLoadingPlaceholder />
 
